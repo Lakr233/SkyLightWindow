@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		50D0FCD92DE09BFF00BB8467 /* SkyLightWindow in Frameworks */ = {isa = PBXBuildFile; productRef = 50D0FCD82DE09BFF00BB8467 /* SkyLightWindow */; };
+		F877C90B42054F182595D3BC /* LookInsideServer in Frameworks */ = {isa = PBXBuildFile; productRef = B968C0F57CA5A21D8BBD7947 /* LookInsideServer */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -17,6 +18,8 @@
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		50D0FCC82DE09BDD00BB8467 /* MoveToSky */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+			);
 			path = MoveToSky;
 			sourceTree = "<group>";
 		};
@@ -28,6 +31,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				50D0FCD92DE09BFF00BB8467 /* SkyLightWindow in Frameworks */,
+				F877C90B42054F182595D3BC /* LookInsideServer in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -79,6 +83,7 @@
 			name = MoveToSky;
 			packageProductDependencies = (
 				50D0FCD82DE09BFF00BB8467 /* SkyLightWindow */,
+				B968C0F57CA5A21D8BBD7947 /* LookInsideServer */,
 			);
 			productName = MoveToSky;
 			productReference = 50D0FCC62DE09BDD00BB8467 /* MoveToSky.app */;
@@ -109,8 +114,10 @@
 			mainGroup = 50D0FCBD2DE09BDD00BB8467;
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
+				5EFABB35AB6B39C82E35FA3F /* XCRemoteSwiftPackageReference "LookInside-Release" */,
 			);
 			preferredProjectObjectVersion = 77;
+			productRefGroup = 50D0FCC72DE09BDD00BB8467 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
@@ -300,6 +307,10 @@
 				DEVELOPMENT_TEAM = 964G86XT2P;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
+				EXCLUDED_SOURCE_FILE_NAMES = (
+					"$(inherited)",
+					"LookInsideServer*",
+				);
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -339,10 +350,26 @@
 		};
 /* End XCConfigurationList section */
 
+/* Begin XCRemoteSwiftPackageReference section */
+		5EFABB35AB6B39C82E35FA3F /* XCRemoteSwiftPackageReference "LookInside-Release" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/LookInsideApp/LookInside-Release.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.2.2;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
 /* Begin XCSwiftPackageProductDependency section */
 		50D0FCD82DE09BFF00BB8467 /* SkyLightWindow */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = SkyLightWindow;
+		};
+		B968C0F57CA5A21D8BBD7947 /* LookInsideServer */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5EFABB35AB6B39C82E35FA3F /* XCRemoteSwiftPackageReference "LookInside-Release" */;
+			productName = LookInsideServer;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
