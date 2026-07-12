@@ -2,7 +2,7 @@
 
 A powerful macOS framework that enables views to be displayed above all other windows using private SkyLight APIs.
 
-![Preview](./Resources/截屏2025-05-23%2020.18.33.png)
+![Preview](./Resources/Preview.png)
 
 ## Features
 
