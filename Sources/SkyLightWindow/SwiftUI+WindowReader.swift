@@ -6,7 +6,11 @@
 //
 
 import AppKit
+#if OpenSwiftUI
+import OpenSwiftUI
+#else
 import SwiftUI
+#endif
 
 struct WindowReadingView: NSViewRepresentable {
     @Binding private var window: NSWindow?

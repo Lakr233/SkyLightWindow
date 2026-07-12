@@ -49,6 +49,26 @@ struct ContentView: View {
 }
 ```
 
+### OpenSwiftUI Integration
+
+Enable the `OpenSwiftUI` package trait:
+
+```swift
+dependencies: [
+    .package(
+        url: "https://github.com/OpenSwiftUIProject/SkyLightWindow",
+        from: "1.0.0",
+        traits: ["OpenSwiftUI"]
+    ),
+]
+```
+
+This uses [`OpenSwiftUI-spm`](https://github.com/OpenSwiftUIProject/OpenSwiftUI-spm)
+binary package. Import `OpenSwiftUI` instead of `SwiftUI` in your app. At the
+time of writing, OpenSwiftUI's macOS binary support requires macOS 15.0 or newer.
+
+To enable trait in your Xcode project, Xcode 26.4+ is required.
+
 ### AppKit Usage
 
 You can also create topmost windows programmatically:

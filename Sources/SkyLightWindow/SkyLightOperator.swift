@@ -6,7 +6,12 @@
 //
 
 import Foundation
+import AppKit
+#if OpenSwiftUI
+import OpenSwiftUI
+#else
 import SwiftUI
+#endif
 
 public enum SKL_CGSSpaceLevel: Int32 {
     case kCGSSpaceAbsoluteLevelDefault = 0
@@ -18,6 +23,7 @@ public enum SKL_CGSSpaceLevel: Int32 {
     case kCGSSpaceAbsoluteLevelVoiceOver = 600
 }
 
+@MainActor
 public class SkyLightOperator {
     public static let shared = SkyLightOperator()
 
