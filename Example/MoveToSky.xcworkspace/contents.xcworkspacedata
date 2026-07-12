@@ -4,4 +4,7 @@
    <FileRef
       location = "group:MoveToSky.xcodeproj">
    </FileRef>
+   <FileRef
+      location = "group:MoveToSkyOpenSwiftUI.xcodeproj">
+   </FileRef>
 </Workspace>

@@ -6,7 +6,11 @@
 //
 
 import SkyLightWindow
+#if OpenSwiftUI
+import OpenSwiftUI
+#else
 import SwiftUI
+#endif
 
 @main
 struct MoveToSkyApp: App {
@@ -15,7 +19,9 @@ struct MoveToSkyApp: App {
             ContentView()
                 .moveToSky()
         }
+        #if !OpenSwiftUI
         .windowStyle(.hiddenTitleBar)
         .windowResizability(.contentMinSize)
+        #endif
     }
 }
