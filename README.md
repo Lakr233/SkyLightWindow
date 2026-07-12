@@ -18,13 +18,14 @@ Add the following to your `Package.swift` file:
 
 ```swift
 dependencies: [
-    .package(url: "https://github.com/Lakr233/SkyLightWindow", from: "1.0.0"),
+    .package(url: "https://github.com/OpenSwiftUIProject/SkyLightWindow", from: "1.0.0"),
 ]
 ```
 
 Platform compatibility:
 
-- macOS 11.0+
+- macOS 15.0+
+- Swift Compiler 6.1+
 
 ## Usage
 
@@ -80,7 +81,7 @@ The framework handles:
 
 ⚠️ **Privacy & Security**: This framework uses private APIs but works without special entitlements and is available to the Mac App Store.
 
-⚠️ **System Compatibility**: Tested on macOS 11.0+ but may work on earlier versions. Private APIs can change between system updates.
+⚠️ **System Compatibility**: Requires macOS 15.0 or newer. Private APIs can change between system updates.
 
 ## Example
 

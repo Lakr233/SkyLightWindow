@@ -20,8 +20,10 @@ struct MoveToSkyModifier: ViewModifier {
 
     func body(content: Content) -> some View {
         content
-            .background(WindowReadingView($window))
-            .onChange(of: window) { _ in
+            .background {
+                WindowReadingView($window)
+            }
+            .onChange(of: window) {
                 guard !hasMoved, let window else { return }
                 hasMoved = true
                 SkyLightOperator.shared.delegateWindow(window)
