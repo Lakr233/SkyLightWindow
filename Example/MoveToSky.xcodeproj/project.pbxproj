@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		50D0FCD92DE09BFF00BB8467 /* SkyLightWindow in Frameworks */ = {isa = PBXBuildFile; productRef = 50D0FCD82DE09BFF00BB8467 /* SkyLightWindow */; };
+		275E710630038F6200386B08 /* SkyLightWindow in Frameworks */ = {isa = PBXBuildFile; productRef = 275E710530038F6200386B08 /* SkyLightWindow */; };
 		F877C90B42054F182595D3BC /* LookInsideServer in Frameworks */ = {isa = PBXBuildFile; productRef = B968C0F57CA5A21D8BBD7947 /* LookInsideServer */; };
 /* End PBXBuildFile section */
 
@@ -18,8 +18,6 @@
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		50D0FCC82DE09BDD00BB8467 /* MoveToSky */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			exceptions = (
-			);
 			path = MoveToSky;
 			sourceTree = "<group>";
 		};
@@ -30,8 +28,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				50D0FCD92DE09BFF00BB8467 /* SkyLightWindow in Frameworks */,
 				F877C90B42054F182595D3BC /* LookInsideServer in Frameworks */,
+				275E710630038F6200386B08 /* SkyLightWindow in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -82,8 +80,8 @@
 			);
 			name = MoveToSky;
 			packageProductDependencies = (
-				50D0FCD82DE09BFF00BB8467 /* SkyLightWindow */,
 				B968C0F57CA5A21D8BBD7947 /* LookInsideServer */,
+				275E710530038F6200386B08 /* SkyLightWindow */,
 			);
 			productName = MoveToSky;
 			productReference = 50D0FCC62DE09BDD00BB8467 /* MoveToSky.app */;
@@ -115,6 +113,7 @@
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
 				5EFABB35AB6B39C82E35FA3F /* XCRemoteSwiftPackageReference "LookInside-Release" */,
+				2715CE263003852B00FBBE37 /* XCLocalSwiftPackageReference "../../SkyLightWindow" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 50D0FCC72DE09BDD00BB8467 /* Products */;
@@ -350,6 +349,15 @@
 		};
 /* End XCConfigurationList section */
 
+/* Begin XCLocalSwiftPackageReference section */
+		2715CE263003852B00FBBE37 /* XCLocalSwiftPackageReference "../../SkyLightWindow" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = ../../SkyLightWindow;
+			traits = (
+			);
+		};
+/* End XCLocalSwiftPackageReference section */
+
 /* Begin XCRemoteSwiftPackageReference section */
 		5EFABB35AB6B39C82E35FA3F /* XCRemoteSwiftPackageReference "LookInside-Release" */ = {
 			isa = XCRemoteSwiftPackageReference;
@@ -362,8 +370,9 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		50D0FCD82DE09BFF00BB8467 /* SkyLightWindow */ = {
+		275E710530038F6200386B08 /* SkyLightWindow */ = {
 			isa = XCSwiftPackageProductDependency;
+			package = 2715CE263003852B00FBBE37 /* XCLocalSwiftPackageReference "../../SkyLightWindow" */;
 			productName = SkyLightWindow;
 		};
 		B968C0F57CA5A21D8BBD7947 /* LookInsideServer */ = {
