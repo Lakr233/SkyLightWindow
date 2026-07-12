@@ -14,6 +14,8 @@ A powerful macOS framework that enables views to be displayed above all other wi
 
 ## Installation
 
+### SwiftPM
+
 Add the following to your `Package.swift` file:
 
 ```swift
@@ -21,6 +23,30 @@ dependencies: [
     .package(url: "https://github.com/OpenSwiftUIProject/SkyLightWindow", from: "1.0.0"),
 ]
 ```
+
+To enable the `OpenSwiftUI` package trait, use:
+
+```swift
+dependencies: [
+    .package(
+        url: "https://github.com/OpenSwiftUIProject/SkyLightWindow",
+        from: "1.0.0",
+        traits: ["OpenSwiftUI"]
+    ),
+]
+```
+
+This uses [`OpenSwiftUI-spm`](https://github.com/OpenSwiftUIProject/OpenSwiftUI-spm)
+binary package. Import `OpenSwiftUI` instead of `SwiftUI` in your app. At the
+time of writing, OpenSwiftUI's macOS binary support requires macOS 15.0 or newer.
+
+### Xcode
+
+In Xcode, add the package dependency and enable the `OpenSwiftUI` trait in the package settings.
+
+To enable trait in your Xcode project, Xcode 26.4+ is required.
+
+![OpenSwiftUI trait](./Resources/OpenSwiftUI-trait.png)
 
 Platform compatibility:
 
@@ -51,23 +77,21 @@ struct ContentView: View {
 
 ### OpenSwiftUI Integration
 
-Enable the `OpenSwiftUI` package trait:
+Usage is identical to the SwiftUI integration above. Import `OpenSwiftUI` instead of `SwiftUI`:
 
 ```swift
-dependencies: [
-    .package(
-        url: "https://github.com/OpenSwiftUIProject/SkyLightWindow",
-        from: "1.0.0",
-        traits: ["OpenSwiftUI"]
-    ),
-]
+import OpenSwiftUI
+import SkyLightWindow
 ```
 
-This uses [`OpenSwiftUI-spm`](https://github.com/OpenSwiftUIProject/OpenSwiftUI-spm)
-binary package. Import `OpenSwiftUI` instead of `SwiftUI` in your app. At the
-time of writing, OpenSwiftUI's macOS binary support requires macOS 15.0 or newer.
-
-To enable trait in your Xcode project, Xcode 26.4+ is required.
+```swift
+struct ContentView: View {
+    var body: some View {
+        Text("This view is always on top!")
+            .moveToSky()
+    }
+}
+```
 
 ### AppKit Usage
 
