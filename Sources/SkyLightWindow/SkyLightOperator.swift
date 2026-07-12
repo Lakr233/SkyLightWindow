@@ -6,7 +6,12 @@
 //
 
 import Foundation
+import AppKit
+#if OpenSwiftUI
+import OpenSwiftUI
+#else
 import SwiftUI
+#endif
 
 public enum SKL_CGSSpaceLevel: Int32 {
     case kCGSSpaceAbsoluteLevelDefault = 0

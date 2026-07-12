@@ -5,6 +5,6 @@
       location = "group:MoveToSky.xcodeproj">
    </FileRef>
    <FileRef
-      location = "group:../">
+      location = "group:MoveToSkyOpenSwiftUI.xcodeproj">
    </FileRef>
 </Workspace>

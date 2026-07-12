@@ -5,8 +5,12 @@
 //  Created by 秋星桥 on 5/23/25.
 //
 
-import Foundation
+import AppKit
+#if OpenSwiftUI
+import OpenSwiftUI
+#else
 import SwiftUI
+#endif
 
 public extension View {
     func moveToSky() -> some View {
