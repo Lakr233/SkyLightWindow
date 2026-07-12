@@ -1,4 +1,4 @@
-// swift-tools-version: 6.1
+// swift-tools-version: 5.9
 // The swift-tools-version declares the minimum version of Swift required to build this package.
 
 import PackageDescription
@@ -6,33 +6,12 @@ import PackageDescription
 let package = Package(
     name: "SkyLightWindow",
     platforms: [
-        .macOS(.v15),
+        .macOS(.v11),
     ],
     products: [
         .library(name: "SkyLightWindow", targets: ["SkyLightWindow"]),
     ],
-    traits: [
-        .trait(
-            name: "OpenSwiftUI",
-            description: "Use OpenSwiftUI instead of SwiftUI"
-        ),
-    ],
-    dependencies: [
-        .package(
-            url: "https://github.com/OpenSwiftUIProject/OpenSwiftUI-spm.git",
-            exact: "0.19.1"
-        ),
-    ],
     targets: [
-        .target(
-            name: "SkyLightWindow",
-            dependencies: [
-                .product(
-                    name: "OpenSwiftUI",
-                    package: "OpenSwiftUI-spm",
-                    condition: .when(traits: ["OpenSwiftUI"])
-                ),
-            ]
-        ),
+        .target(name: "SkyLightWindow"),
     ]
 )

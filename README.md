@@ -48,7 +48,12 @@ To enable trait in your Xcode project, Xcode 26.4+ is required.
 
 ![OpenSwiftUI trait](./Resources/OpenSwiftUI-trait.png)
 
-Platform compatibility:
+Platform compatibility for default trait:
+
+- macOS 11.0+
+- Swift Compiler 5.9+
+
+Platform compatibility for `OpenSwiftUI` trait:
 
 - macOS 15.0+
 - Swift Compiler 6.1+
@@ -125,16 +130,25 @@ The framework handles:
 
 ⚠️ **Privacy & Security**: This framework uses private APIs but works without special entitlements and is available to the Mac App Store.
 
-⚠️ **System Compatibility**: Requires macOS 15.0 or newer. Private APIs can change between system updates.
+⚠️ **System Compatibility**: The default SwiftUI integration supports macOS
+11.0 or newer. The `OpenSwiftUI` trait requires macOS 15.0 or newer. Private
+APIs can change between system updates.
 
 ## Example
-
-Check out the included example project to see SkyLightWindow in action:
 
 ```bash
 cd Example
 open MoveToSky.xcworkspace
 ```
+
+The `Example` directory contains two Xcode projects that share the same example
+sources:
+
+- `MoveToSky.xcodeproj` uses the default SwiftUI integration.
+- `MoveToSkyOpenSwiftUI.xcodeproj` enables the `OpenSwiftUI` trait and requires
+  Xcode 26.4 or newer.
+
+Open the project for the integration you want to test.
 
 ## License
 
