@@ -20,7 +20,7 @@ Add the following to your `Package.swift` file:
 
 ```swift
 dependencies: [
-    .package(url: "https://github.com/OpenSwiftUIProject/SkyLightWindow", from: "1.0.0"),
+    .package(url: "https://github.com/Lakr233/SkyLightWindow", from: "1.0.0"),
 ]
 ```
 
@@ -29,7 +29,7 @@ To enable the `OpenSwiftUI` package trait, use:
 ```swift
 dependencies: [
     .package(
-        url: "https://github.com/OpenSwiftUIProject/SkyLightWindow",
+        url: "https://github.com/Lakr233/SkyLightWindow",
         from: "1.0.0",
         traits: ["OpenSwiftUI"]
     ),
