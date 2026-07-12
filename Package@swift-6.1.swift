@@ -3,10 +3,43 @@
 
 import PackageDescription
 
+// MARK: - OpenSwiftUI integration
+// See https://github.com/OpenSwiftUIProject/OpenSwiftUI/blob/main/INTEGRATION.md
+
+let openSwiftUISourcePath = Context.environment["OPENSWIFTUI_SOURCE_PATH"].flatMap {
+    $0.isEmpty ? nil : $0
+}
+let openSwiftUIBinary = Context.environment["OPENSWIFTUI_BINARY"].flatMap {
+    $0 == "1"
+} ?? true
+let macOSPlatform: SupportedPlatform = openSwiftUISourcePath == nil && openSwiftUIBinary
+    ? .macOS(.v11)
+    : .macOS(.v15)
+
+let openSwiftUIDependency: Package.Dependency
+let openSwiftUIPackageName: String
+
+if let openSwiftUISourcePath {
+    openSwiftUIDependency = .package(path: openSwiftUISourcePath)
+    openSwiftUIPackageName = "OpenSwiftUI"
+} else if openSwiftUIBinary {
+    openSwiftUIDependency = .package(
+        url: "https://github.com/OpenSwiftUIProject/OpenSwiftUI-spm.git",
+        from: "0.19.2"
+    )
+    openSwiftUIPackageName = "OpenSwiftUI-spm"
+} else {
+    openSwiftUIDependency = .package(
+        url: "https://github.com/OpenSwiftUIProject/OpenSwiftUI.git",
+        branch: "main"
+    )
+    openSwiftUIPackageName = "OpenSwiftUI"
+}
+
 let package = Package(
     name: "SkyLightWindow",
     platforms: [
-        .macOS(.v11),
+        macOSPlatform,
     ],
     products: [
         .library(name: "SkyLightWindow", targets: ["SkyLightWindow"]),
@@ -18,10 +51,7 @@ let package = Package(
         ),
     ],
     dependencies: [
-        .package(
-            url: "https://github.com/OpenSwiftUIProject/OpenSwiftUI-spm.git",
-            exact: "0.19.1"
-        ),
+        openSwiftUIDependency,
     ],
     targets: [
         .target(
@@ -29,7 +59,7 @@ let package = Package(
             dependencies: [
                 .product(
                     name: "OpenSwiftUI",
-                    package: "OpenSwiftUI-spm",
+                    package: openSwiftUIPackageName,
                     condition: .when(traits: ["OpenSwiftUI"])
                 ),
             ]
