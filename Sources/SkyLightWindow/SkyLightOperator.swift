@@ -23,7 +23,6 @@ public enum SKL_CGSSpaceLevel: Int32 {
     case kCGSSpaceAbsoluteLevelVoiceOver = 600
 }
 
-@MainActor
 public class SkyLightOperator {
     public static let shared = SkyLightOperator()
 

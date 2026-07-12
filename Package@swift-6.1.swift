@@ -34,5 +34,6 @@ let package = Package(
                 ),
             ]
         ),
-    ]
+    ],
+    swiftLanguageModes: [.v5]
 )
